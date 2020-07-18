@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "news_CLI"
+require_relative "../lib/news_CLI"
+
+
+NewsCLI::CLI.new.start
+NewsCLI::Article.search("donald trump")
+
