@@ -4,8 +4,8 @@ require 'open-uri'
 require 'erb'
 module NewsCLI
   class API
-    API_HOST = "https://newsapi.org/v2/"
-    TOP_HEADLINES = "top-headlines?"
+    # API_HOST = "https://newsapi.org/v2/"
+    # TOP_HEADLINES = "top-headlines?"
 
     def self.api_public_key 
       begin

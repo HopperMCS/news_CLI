@@ -2,6 +2,7 @@ require 'pry'
 module NewsCLI
   class CLI
     def start
+      API.api_public_key
       puts "Welcome to the News CLI!"
       menu
       @input = "query"
