@@ -4,9 +4,6 @@ require 'open-uri'
 require 'erb'
 module NewsCLI
   class API
-    # API_HOST = "https://newsapi.org/v2/"
-    # TOP_HEADLINES = "top-headlines?"
-
     def self.api_public_key 
       begin
         @@public = File.open(File.expand_path("~/.newsfeed_key")).read.strip
@@ -30,7 +27,6 @@ module NewsCLI
       req = URI.open(url)
       response_body = req.read
       json = JSON.parse(response_body)
-      # puts JSON.pretty_generate(json)
     end
 
     def self.get_headlines(query)
