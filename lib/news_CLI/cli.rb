@@ -12,16 +12,15 @@ module NewsCLI
         article_search
         article_navigator
       end
-      puts "Thank you for using the News CLI!"
     end
 
     def menu
       puts <<-QUERY
-        ============================================
+        =======================================================
         Please enter a search query
-        To start a new query at any time, type query
+        To start a new query from a previous search, type query
         To leave, type exit or quit at any time
-        ============================================
+        =======================================================
       QUERY
     end
 
@@ -48,6 +47,15 @@ module NewsCLI
           puts "URL: #{selected_article.url}"
         end
       end
+      
+      # Fix the control flow by recognizing when the loop has ended and 
+      # implement control logic to either exit or restart
+      if @input == "exit"
+        puts "Thank you for using the News CLI!"
+      else
+        start
+      end
+
     end
   end
 end
